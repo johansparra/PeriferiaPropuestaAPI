@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.example.org/ServiciosAdministrativosAPI" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ServiciosAdministativosAPI" targetNamespace="http://www.example.org/ServiciosAdministrativosAPI">
+  <!--Variables-->
+  <wsdl:types>
+    <xsd:schema xmlns:mrm="http://www.example.org/ServiciosAdministrativosAPI" targetNamespace="http://www.example.org/ServiciosAdministrativosAPI">
+      <xsd:include schemaLocation="APICardAdminInq.xsd"/>
+    </xsd:schema>
+  </wsdl:types>
+  <!--Tipos de Respuesta Activacion de Tarjetas-->
+  <wsdl:message name="activacionTarjetas_in">
+    <wsdl:part element="tns:activacionTarjetasRequest" name="activacionTarjetasRequest"/>
+  </wsdl:message>
+  <wsdl:message name="activacionTarjetas_out">
+    <wsdl:part element="tns:TarjetasResponse" name="TarjetasResponse"/>
+  </wsdl:message>
+  <wsdl:message name="activacionTarjetas_faul1">
+    <wsdl:part element="tns:TarjetasResponse" name="TarjetasResponse"/>
+  </wsdl:message>
+  <!--Tipos de Respuesta Asignacion de Tarjetas-->
+  <wsdl:message name="asignacionTarjetas_in">
+    <wsdl:part element="tns:asignacionTarjetasRequest" name="asignacionTarjetasRequest"/>
+  </wsdl:message>
+  <wsdl:message name="asignacionTarjetas_out">
+    <wsdl:part element="tns:TarjetasResponse" name="TarjetasResponse"/>
+  </wsdl:message>
+  <wsdl:message name="asignacionTarjetas_faul1">
+    <wsdl:part element="tns:TarjetasResponse" name="TarjetasResponse"/>
+  </wsdl:message>
+  <!--Tipos de Respuesta Bloqueo de Tarjetas-->
+  <wsdl:message name="bloqueoTarjetas_in">
+    <wsdl:part element="tns:bloqueoTarjetasRequest" name="bloqueoTarjetasRequest"/>
+  </wsdl:message>
+  <wsdl:message name="bloqueoTarjetas_out">
+    <wsdl:part element="tns:TarjetasResponse" name="TarjetasResponse"/>
+  </wsdl:message>
+  <wsdl:message name="bloqueoTarjetas_faul1">
+    <wsdl:part element="tns:TarjetasResponse" name="TarjetasResponse"/>
+  </wsdl:message>
+  <!--Tipo de puerto operacion funcional Activacion-->
+  <wsdl:portType name="ServiciosAdministativosAPI">
+    <wsdl:operation name="activacionTarjetas">
+      <wsdl:input message="tns:activacionTarjetas_in" name="activacionTarjetas_Input"/>
+      <wsdl:output message="tns:activacionTarjetas_out" name="activacionTarjetas_Output"/>
+      <wsdl:fault message="tns:activacionTarjetas_faul1" name="activacionTarjetas_Fault"/>
+    </wsdl:operation>
+    <!--Tipo de puerto operacion funcional Asignacion-->
+    <wsdl:operation name="asignacionTarjetas">
+      <wsdl:input message="tns:asignacionTarjetas_in" name="asignacionTarjetas_Input"/>
+      <wsdl:output message="tns:asignacionTarjetas_out" name="asignacionTarjetas_Output"/>
+      <wsdl:fault message="tns:asignacionTarjetas_faul1" name="asignacionTarjetas_Fault"/>
+    </wsdl:operation>
+    <!--Tipo de puerto operacion funcional Bloqueo-->
+    <wsdl:operation name="bloqueoTarjetas">
+      <wsdl:input message="tns:bloqueoTarjetas_in" name="bloqueoTarjetas_Input"/>
+      <wsdl:output message="tns:bloqueoTarjetas_out" name="bloqueoTarjetas_Output"/>
+      <wsdl:fault message="tns:bloqueoTarjetas_faul1" name="bloqueoTarjetas_Fault"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <!--Protocolo-->
+  <wsdl:binding name="ServiciosAdministativosCodensaSOAP" type="tns:ServiciosAdministativosAPI">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="activacionTarjetas">
+      <soap:operation soapAction="http://www.example.org/ServiciosAdministativosAPI/activacionTarjetas"/>
+      <wsdl:input name="activacionTarjetas_Input">
+        <soap:body parts="activacionTarjetasRequest" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="activacionTarjetas_Output">
+        <soap:body parts="TarjetasResponse" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="activacionTarjetas_Fault">
+        <soap:fault name="activacionTarjetas_Fault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="asignacionTarjetas">
+      <soap:operation soapAction="http://www.example.org/ServiciosAdministativosAPI/asignacionTarjetas"/>
+      <wsdl:input name="asignacionTarjetas_Input">
+        <soap:body parts="asignacionTarjetasRequest" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="asignacionTarjetas_Output">
+        <soap:body parts="TarjetasResponse" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="asignacionTarjetas_Fault">
+        <soap:fault name="asignacionTarjetas_Fault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="bloqueoTarjetas">
+      <soap:operation soapAction="http://www.example.org/ServiciosAdministativosAPI/bloqueoTarjetas"/>
+      <wsdl:input name="bloqueoTarjetas_Input">
+        <soap:body parts="bloqueoTarjetasRequest" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="bloqueoTarjetas_Output">
+        <soap:body parts="TarjetasResponse" use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="bloqueoTarjetas_Fault">
+        <soap:fault name="bloqueoTarjetas_Fault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <!--Para donde apunta el servicio-->
+  <wsdl:service name="ServiciosAdministativosAPI">
+    <wsdl:port binding="tns:ServiciosAdministativosCodensaSOAP" name="ServiciosAdministativosCodensaSOAP">
+      <soap:address location="https://www.periferiaitgroupcom/ServicioAdministrativosAPI"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

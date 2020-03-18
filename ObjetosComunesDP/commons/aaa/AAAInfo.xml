@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aaa:AAAInfo xmlns:aaa="http://www.datapower.com/AAAInfo" xmlns:dpfunc="http://www.datapower.com/extensions/functions">
+   <aaa:FormatVersion>1</aaa:FormatVersion>
+   <aaa:Filename>local:///commons/aaa/AAAInfo.xml</aaa:Filename>
+   <aaa:Summary/>
+   
+   <aaa:Authenticate>
+      <aaa:DN>CN=colpatria.developer.wss</aaa:DN>
+      <aaa:OutputCredential>periferiawss</aaa:OutputCredential>
+   </aaa:Authenticate>
+      
+</aaa:AAAInfo>

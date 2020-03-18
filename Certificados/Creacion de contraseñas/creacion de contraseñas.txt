@@ -1,0 +1,4 @@
+openssl enc -aes-256-cbc -k secrect -pbkdf2 -P -md sha1 > DEV_API_SSLSBDP.txt
+openssl enc -aes-256-cbc -k secrect -pbkdf2 -P -md sha1 > DEV_API_SSLDPMC.txt
+openssl enc -aes-256-cbc -k secrect -pbkdf2 -P -md sha1 > DEV_API_WSSSBDP.txt
+openssl enc -aes-256-cbc -k secrect -pbkdf2 -P -md sha1 > DEV_API_WSSDPMC.txt

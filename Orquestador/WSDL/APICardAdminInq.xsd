@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:mrm="http://www.example.org/ServiciosAdministrativosAPI" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenv11="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" elementFormDefault="qualified" targetNamespace="http://www.example.org/ServiciosAdministrativosAPI">
+  <!-- campos pregunta activacionTarjetasRequest -->
+  <xsd:element name="activacionTarjetasRequest" type="mrm:_activacionTarjetasRq"/>
+  <xsd:complexType name="_activacionTarjetasRq">
+    <xsd:sequence>
+      <xsd:element form="qualified" minOccurs="1" maxOccurs="1" name="EsbHeader" type="mrm:_cabeceraSolicitud"/>
+      <xsd:element form="qualified" minOccurs="1" maxOccurs="1" name="CustomerField" type="mrm:_activacionSolicitud"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!-- campos pregunta asignacionTarjetasRequest -->
+  <xsd:element name="asignacionTarjetasRequest" type="mrm:_asignacionTarjetasRq"/>
+  <xsd:complexType name="_asignacionTarjetasRq">
+    <xsd:sequence>
+      <xsd:element form="qualified" minOccurs="1" maxOccurs="1" name="EsbHeader" type="mrm:_cabeceraSolicitud"/>
+      <xsd:element form="qualified" minOccurs="1" maxOccurs="1" name="CustomerField" type="mrm:_asignacionSolicitud"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!-- campos pregunta bloqueoTarjetasRequest -->
+  <xsd:element name="bloqueoTarjetasRequest" type="mrm:_bloqueoTarjetasRq"/>
+  <xsd:complexType name="_bloqueoTarjetasRq">
+    <xsd:sequence>
+      <xsd:element form="qualified" minOccurs="1" maxOccurs="1" name="EsbHeader" type="mrm:_cabeceraSolicitud"/>
+      <xsd:element form="qualified" minOccurs="1" maxOccurs="1" name="CustomerField" type="mrm:_bloqueoSolicitud"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!-- Campos del mensaje Header-->
+  <xsd:complexType name="_cabeceraSolicitud">
+    <xsd:sequence>
+      <xsd:element name="TransactionID" maxOccurs="1" minOccurs="1" nillable="false">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="48"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element form="qualified" minOccurs="1" maxOccurs="1" name="transactionDate" type="xsd:date"/>
+      <xsd:element form="qualified" minOccurs="1" maxOccurs="1" name="transactionTime" type="xsd:time"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!-- Campos del mensaje solicitud  activacionTarjetasRequest-->
+  <xsd:complexType name="_activacionSolicitud">
+    <xsd:sequence>
+      <xsd:element name="nroCuentaPrimaria" maxOccurs="1" minOccurs="1" nillable="false">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:minLength value="16"/>
+            <xsd:maxLength value="19"/>
+            <xsd:pattern value="([0-9]*)"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element form="qualified" minOccurs="1" maxOccurs="1" name="fecVencimiento" type="xsd:date"/>
+      <xsd:element name="codServicio" maxOccurs="1" minOccurs="1" nillable="false">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="3"/>
+            <xsd:pattern value="([0-9]*)"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!-- Campos del mensaje solicitud  asignacionTarjetasRequest-->
+  <xsd:complexType name="_asignacionSolicitud">
+    <xsd:sequence>
+      <xsd:element name="nroCuentaPrimaria" maxOccurs="1" minOccurs="1" nillable="false">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:minLength value="16"/>
+            <xsd:maxLength value="19"/>
+            <xsd:pattern value="([0-9]*)"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="VerificacionPIN" maxOccurs="1" minOccurs="1" nillable="false">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="3"/>
+            <xsd:pattern value="([0-9]*)"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!-- Campos del mensaje solicitud  bloqueoTarjetasRequest-->
+  <xsd:complexType name="_bloqueoSolicitud">
+    <xsd:sequence>
+      <xsd:element name="nroCuentaPrimaria" maxOccurs="1" minOccurs="1" nillable="false">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:minLength value="16"/>
+            <xsd:maxLength value="19"/>
+            <xsd:pattern value="([0-9]*)"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!-- campos respuesta TarjetasResponse -->
+  <xsd:element name="TarjetasResponse" type="mrm:_APIResponse"/>
+  <xsd:complexType name="_APIResponse">
+    <xsd:sequence>
+      <xsd:element name="nroAutorizacion" type="xsd:string"/>
+      <xsd:element name="estado" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+	  <xsd:element name="fecha" minOccurs="1" maxOccurs="1"  type="xsd:date"/>
+      <xsd:element name="hora" minOccurs="1" maxOccurs="1"  type="xsd:time"/>
+      <xsd:element name="codRespuesta" minOccurs="1" maxOccurs="1"  type="xsd:string"/>
+      <xsd:element name="descRespuesta" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+      <xsd:element name="descError" type="xsd:string" maxOccurs="1" minOccurs="0" nillable="true"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>
