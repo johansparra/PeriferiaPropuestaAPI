@@ -1,0 +1,43 @@
+CREACIOON CERTIFICADO
+\Program Files\Java\jdk1.8.0_201\bin>
+
+keytool -genkey -keyalg RSA -alias DEV_API_SSLCON -keystore DEV_API_SSLCON.jks -storepass 34B622225F7AAC26385F8E5165B1D79A -validity 360 -keysize 2048
+
+¿Cuáles son su nombre y su apellido?
+  [Unknown]:  DEV_API_SSLCON
+¿Cuál es el nombre de su unidad de organización?
+  [Unknown]:  INTEGRACION
+¿Cuál es el nombre de su organización?
+  [Unknown]:  PERIFERIA IT
+¿Cuál es el nombre de su ciudad o localidad?
+  [Unknown]:  BOGOTA DC
+¿Cuál es el nombre de su estado o provincia?
+  [Unknown]:  CUNDINAMARCA
+¿Cuál es el código de país de dos letras de la unidad?
+  [Unknown]:  CO
+¿Es correcto ?
+  [no]: si
+  
+  Introduzca la contraseña de clave para <DEV_API_SSLCON>
+        (INTRO si es la misma contraseña que la del almacén de claves): 
+Volver a escribir la contraseña nueva: 34B622225F7AAC26385F8E5165B1D79A
+
+
+SUBIR SEGURIDAD 
+keytool -importkeystore -srckeystore DEV_API_SSLCON.jks -destkeystore DEV_API_SSLCON.jks -deststoretype pkcs12
+
+
+CREACION CSR
+keytool -certreq -alias DEV_API_SSLCON -keystore DEV_API_SSLCON.jks -file DEV_API_SSLCON.csr
+	
+
+CREAR .P12
+Create a PKCS12 (.pfx / .p12) from a JKS / JAVA keystore
+keytool -importkeystore -srckeystore DEV_API_SSLCON.jks -destkeystore DEV_API_SSLCON.p12 -srcstoretype JKS -deststoretype PKCS12 -deststorepass 34B622225F7AAC26385F8E5165B1D79A -srcalias DEV_API_SSLCON -destalias ALIAS_DEST
+
+
+CREAR EL CERTIFICAOD .CER
+keytool -export -alias DEV_API_SSLCON -keystore C:/Users/Sebas/Desktop/certificado/DEV_API_SSLCON.jks -file C:/Users/Sebas/Desktop/certificado/DEV_API_SSLCON.cer
+
+
+

@@ -35,16 +35,6 @@ CREAR .P12
 Create a PKCS12 (.pfx / .p12) from a JKS / JAVA keystore
 keytool -importkeystore -srckeystore DEV_API_SSLSBDP.jks -destkeystore DEV_API_SSLSBDP.p12 -srcstoretype JKS -deststoretype PKCS12 -deststorepass 2BF5AC1149F735BA24991B314A1354F8 -srcalias DEV_API_SSLSBDP -destalias ALIAS_DEST
 
-
-errorrrr
-GENERAR EL CER
-keytool -export -alias DEV_API_SSLSBDP -file DEV_API_SSLSBDP.cer
-
-
 CREAR EL CERTIFICAOD .CER
 keytool -export -alias DEV_API_SSLSBDP -keystore C:/Users/Sebas/Desktop/certificado/DEV_API_SSLSBDP.jks -file C:/Users/Sebas/Desktop/certificado/DEV_API_SSLSBDP.cer
-
-
-NO LA DEJA IMPORTAR PORQUE TIENE LA MISMA CLAVE EL ALMACEN MIO Y LA CLAVE QUE GENERE PARA CREAR EL CERTIFICADO
-keytool -import -trustcacerts -alias DEV_API_SSLSBDP  -keystore DEV_API_SSLSBDP.jks -file C:/Users/Sebas/Desktop/certificado/DEV_API_SSLSBDP.cer
 
