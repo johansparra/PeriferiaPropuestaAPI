@@ -1,7 +1,8 @@
 # PeriferiaPropuestaAPI
 Propuesta integracion de servicios, los aspectos relevantes en transporte para consumo son:
-# +Orquestador:
+# Orquestador:
  *SOAP to REST.
+ 
  *Exposición para consumo en Datapower Externo.
  *Backend HTTPS TLS 1.2 mutual (two way), cliente y servidor presentan certificados.
            *Se remueven headers de WS-Security antes de enviar a clientes.
