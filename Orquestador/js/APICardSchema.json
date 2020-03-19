@@ -1,0 +1,16 @@
+{
+    "description": "A query request following the below definition",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "EsbHeader": {
+        "TransactionID": { "type":  "string"},
+        "transactionDate": { "type": "string"},
+		"transactionTime": { "type": "string"}
+    },
+	"CustomerField": {
+        "nroCuentaPrimaria": { "type":  "string"},
+        "fecVencimiento": { "type": "string"},
+		"codServicio": { "type": "string"}
+    },
+     "required": ["EsbHeader","CustomerField"]
+}

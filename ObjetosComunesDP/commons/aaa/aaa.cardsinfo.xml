@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aaa:AAAInfo xmlns:aaa="http://www.datapower.com/AAAInfo" xmlns:dpfunc="http://www.datapower.com/extensions/functions">
+   <aaa:FormatVersion>1</aaa:FormatVersion>
+   <aaa:Filename>local:///commons/aaa/aaa.cardsinfo.xml</aaa:Filename>
+   <aaa:Summary>autenticacion aaa wssecurity</aaa:Summary>
+   <aaa:Authenticate>
+      <aaa:Username>prueba</aaa:Username>
+      <aaa:Password>prueba</aaa:Password>
+      <aaa:OutputCredential>periferiauser</aaa:OutputCredential>
+   </aaa:Authenticate>
+   <aaa:Authenticate>
+      <aaa:Username>periferia</aaa:Username>
+      <aaa:Password>periferia</aaa:Password>
+      <aaa:OutputCredential>periferiauser</aaa:OutputCredential>
+   </aaa:Authenticate>
+
+   <!--Specify credential (if any) to use when there is no authenticated identity.-->
+   <aaa:Authenticate>
+      <aaa:Any />
+      <aaa:OutputCredential>aaa.pinsinfo.xml</aaa:OutputCredential>
+   </aaa:Authenticate>
+   <aaa:MapResource>
+      <aaa:OriginalURL>.*</aaa:OriginalURL>
+      <aaa:OutputResource>periferiauser.resource</aaa:OutputResource>
+   </aaa:MapResource>
+   <!--Authorize access to resource for credentials.-->
+   <aaa:Authorize>
+      <aaa:InputCredential>periferiauser</aaa:InputCredential>
+      <aaa:InputResource>periferiauser.resource</aaa:InputResource>
+      <aaa:Access>allow</aaa:Access>
+   </aaa:Authorize>
+</aaa:AAAInfo>
