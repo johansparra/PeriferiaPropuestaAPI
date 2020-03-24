@@ -218,7 +218,7 @@ xmlns:ser="http://www.example.org/ServiciosAdministrativosAPI">\r
    <soapenv:Body>\r
       <ser:activacionTarjetasRequest>\r
          <ser:EsbHeader>\r
-            <ser:TransactionID>${#Project#TransactionID}</ser:TransactionID>\r
+            <ser:transactionID>${#Project#TransactionID}</ser:transactionID>\r
             <ser:transactionDate>${#Project#fecha}</ser:transactionDate>\r
             <ser:transactionTime>${#Project#hora}</ser:transactionTime>\r
          </ser:EsbHeader>\r
@@ -236,7 +236,7 @@ xmlns:ser="http://www.example.org/ServiciosAdministrativosAPI">\r
    <soapenv:Body>\r
       <ser:activacionTarjetasRequest>\r
          <ser:EsbHeader>\r
-            <ser:TransactionID>${#Project#TransactionID}</ser:TransactionID>\r
+            <ser:transactionID>${#Project#TransactionID}</ser:transactionID>\r
             <ser:transactionDate>${#Project#fecha}</ser:transactionDate>\r
             <ser:transactionTime>${#Project#hora}</ser:transactionTime>\r
          </ser:EsbHeader>\r
@@ -252,7 +252,7 @@ xmlns:ser="http://www.example.org/ServiciosAdministrativosAPI">\r
    <soapenv:Body>\r
       <ser:asignacionTarjetasRequest>\r
          <ser:EsbHeader>\r
-            <ser:TransactionID>${#Project#TransactionID}</ser:TransactionID>
+            <ser:transactionID>${#Project#TransactionID}</ser:transactionID>
             <ser:transactionDate>${#Project#fecha}</ser:transactionDate>
             <ser:transactionTime>${#Project#hora}</ser:transactionTime>
          </ser:EsbHeader>\r
@@ -267,7 +267,7 @@ xmlns:ser="http://www.example.org/ServiciosAdministrativosAPI">\r
    <soapenv:Body>\r
       <ser:asignacionTarjetasRequest>\r
          <ser:EsbHeader>\r
-            <ser:TransactionID>${#Project#TransactionID}</ser:TransactionID>
+            <ser:transactionID>${#Project#TransactionID}</ser:transactionID>
             <ser:transactionDate>${#Project#fecha}</ser:transactionDate>
             <ser:transactionTime>${#Project#hora}</ser:transactionTime>
          </ser:EsbHeader>\r
@@ -282,7 +282,7 @@ xmlns:ser="http://www.example.org/ServiciosAdministrativosAPI">\r
    <soapenv:Body>\r
       <ser:bloqueoTarjetasRequest>\r
          <ser:EsbHeader>\r
-            <ser:TransactionID>${#Project#TransactionID}</ser:TransactionID>\r
+            <ser:transactionID>${#Project#TransactionID}</ser:transactionID>\r
             <ser:transactionDate>${#Project#fecha}</ser:transactionDate>\r
             <ser:transactionTime>${#Project#hora}</ser:transactionTime>\r
          </ser:EsbHeader>\r
@@ -296,7 +296,7 @@ xmlns:ser="http://www.example.org/ServiciosAdministrativosAPI">\r
    <soapenv:Body>\r
       <ser:bloqueoTarjetasRequest>\r
          <ser:EsbHeader>\r
-            <ser:TransactionID>${#Project#TransactionID}</ser:TransactionID>\r
+            <ser:transactionID>${#Project#TransactionID}</ser:transactionID>\r
             <ser:transactionDate>${#Project#fecha}</ser:transactionDate>\r
             <ser:transactionTime>${#Project#hora}</ser:transactionTime>\r
          </ser:EsbHeader>\r
@@ -304,6 +304,36 @@ xmlns:ser="http://www.example.org/ServiciosAdministrativosAPI">\r
             <ser:nroCuentaPrimaria>1920986257189010</ser:nroCuentaPrimaria>\r
          </ser:CustomerField>\r
       </ser:bloqueoTarjetasRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/ServiciosAdministativosAPI/bloqueoTarjetas"/><con:wsrmConfig version="1.2"/></con:call><con:call id="1705097f-0e05-4269-8366-84b15766ef65" name="otro"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://192.168.64.128:9107/ServicioAdministrativosAPI</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://www.example.org/ServiciosAdministrativosAPI">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <dependency>\r
+         <groupId>org.springframework.boot</groupId>\r
+         <artifactId>spring-boot-starter</artifactId>\r
+      </dependency>\r
+      <dependency>\r
+         <groupId>org.springframework.boot</groupId>\r
+         <artifactId>spring-boot-starter-test</artifactId>\r
+         <scope>test</scope>\r
+      </dependency>\r
+      <dependency>\r
+         <groupId>org.springframework.boot</groupId>\r
+         <artifactId>spring-boot-starter</artifactId>\r
+      </dependency>\r
+      <dependency>\r
+         <groupId>org.springframework</groupId>\r
+         <artifactId>spring-web</artifactId>\r
+      </dependency>\r
+      <dependency>\r
+         <groupId>org.springframework.boot</groupId>\r
+         <artifactId>spring-boot-starter-web</artifactId>\r
+      </dependency>\r
+      <dependency>\r
+         <groupId>org.springframework.boot</groupId>\r
+         <artifactId>spring-boot-starter-test</artifactId>\r
+         <scope>test</scope>\r
+      </dependency>\r
    </soapenv:Body>\r
 </soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.example.org/ServiciosAdministativosAPI/bloqueoTarjetas"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:mockService id="bb3ad212-0e25-42c7-8355-dc0c5c2cea21" port="8080" path="/" host="PC-SEBAS" name="MockService 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties/><con:mockOperation name="activacionTarjetas" id="0e506eb3-016c-4a0a-97b2-ead55c00d900" interface="ServiciosAdministativosCodensaSOAP" operation="activacionTarjetas"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="e764ba04-83cd-4320-8763-c996b154eca8" httpResponseStatus="500" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
    <env:Body>
