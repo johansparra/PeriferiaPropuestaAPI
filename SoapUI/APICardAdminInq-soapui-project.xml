@@ -211,7 +211,7 @@
       <xsd:element name="descError" type="xsd:string" maxOccurs="1" minOccurs="0" nillable="true"/>
     </xsd:sequence>
   </xsd:complexType>
-</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://192.168.64.128:9106/ServicioAdministrativosAPI</con:endpoint><con:endpoint>https://www.periferiaitgroupcom/ServicioAdministrativosAPI</con:endpoint></con:endpoints><con:operation id="c57c210b-96d6-4893-9b2e-06c96f9f57a0" isOneWay="false" action="http://www.example.org/ServiciosAdministativosAPI/activacionTarjetas" name="activacionTarjetas" bindingOperationName="activacionTarjetas" type="Request-Response" outputName="activacionTarjetas_Output" inputName="activacionTarjetas_Input" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="0100ec34-b06b-4ea0-9074-e5e81e0ad29c" name="HTTP-9106" outgoingWss="firma y user"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.64.128:9106/ServicioAdministrativosAPI</con:endpoint><con:request><![CDATA[<soapenv:Envelope
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://192.168.64.128:9106/ServicioAdministrativosAPI</con:endpoint><con:endpoint>https://www.periferiaitgroupcom/ServicioAdministrativosAPI</con:endpoint></con:endpoints><con:operation id="c57c210b-96d6-4893-9b2e-06c96f9f57a0" isOneWay="false" action="http://www.example.org/ServiciosAdministativosAPI/activacionTarjetas" name="activacionTarjetas" bindingOperationName="activacionTarjetas" type="Request-Response" outputName="activacionTarjetas_Output" inputName="activacionTarjetas_Input" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="0100ec34-b06b-4ea0-9074-e5e81e0ad29c" name="HTTP-9106" outgoingWss="firma y user"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://192.168.64.128:9006/ServicioAdministrativosAPI</con:endpoint><con:request><![CDATA[<soapenv:Envelope
 xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
 xmlns:ser="http://www.example.org/ServiciosAdministrativosAPI">\r
    <soapenv:Header/>\r
@@ -273,7 +273,7 @@ xmlns:ser="http://www.example.org/ServiciosAdministrativosAPI">\r
          </ser:EsbHeader>\r
          <ser:CustomerField>\r
             <ser:nroCuentaPrimaria>1920986257189010</ser:nroCuentaPrimaria>
-            <ser:VerificacionPIN>456</ser:VerificacionPIN>\r
+            <ser:verificacionPIN>456</ser:verificacionPIN>\r
          </ser:CustomerField>\r
       </ser:asignacionTarjetasRequest>\r
    </soapenv:Body>\r
@@ -301,7 +301,7 @@ xmlns:ser="http://www.example.org/ServiciosAdministrativosAPI">\r
             <ser:transactionTime>${#Project#hora}</ser:transactionTime>\r
          </ser:EsbHeader>\r
          <ser:CustomerField>\r
-            <ser:nroCuentaPrimaria>1920986257189010</ser:nroCuentaPrimaria>\r
+            <ser:nroCuentaPrimaria>192098625718901012</ser:nroCuentaPrimaria>\r
          </ser:CustomerField>\r
       </ser:bloqueoTarjetasRequest>\r
    </soapenv:Body>\r

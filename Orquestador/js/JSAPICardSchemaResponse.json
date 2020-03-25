@@ -1,0 +1,12 @@
+{
+    "description": "A query request following the below definition",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+        "nroAutorizacion": { "type":  "string"},
+        "estado": { "type": "string"},
+		"fecha": { "type": "string"},
+        "hora": { "type":  "string"},
+        "codRespuesta": { "type": "string"},
+		"descRespuesta": { "type": "string"},
+     "required": ["nroAutorizacion","estado","fecha","hora"]
+}

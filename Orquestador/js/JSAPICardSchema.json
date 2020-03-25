@@ -1,0 +1,12 @@
+{
+    "description": "A query request following the below definition",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+        "transactionID": { "type":  "string"},
+        "transactionDate": { "type": "string"},
+		"transactionTime": { "type": "string"},
+        "nroCuentaPrimaria": { "type":  "string"},
+        "fecVencimiento": { "type": "string"},
+		"codServicio": { "type": "string"},
+     "required": ["transactionID","transactionDate","transactionTime","nroCuentaPrimaria"]
+}
