@@ -3,6 +3,9 @@ declare namespace dp = "http://www.datapower.com/extensions";
 declare namespace ser = "http://www.example.org/ServiciosAdministrativosAPI";
 declare option jsoniq-version "0.4.42";
 declare option output:method "json";
+declare option output:headers: {
+                        'Authorization': 'Basic ' + new Buffer("hola" ':' + "mundo").toString('base64')
+                    }
 
 let $request := //ser:activacionTarjetasRequest,
     $requestHeader := //ser:activacionTarjetasRequest/ser:EsbHeader,
