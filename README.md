@@ -24,8 +24,8 @@ Propuesta integracion de servicios, los aspectos relevantes en transporte para c
   * Algoritmo: RS256 (RSASSA-PKCS-v1_5 usando SHA-256) Esquema de firma con apéndice estandarizado por primera vez en la versión 1.5 de PKCS # 1. Requiere un tamaño de clave de 2048 bits o mayor
   * Encabezado Protegido: 
   
-                     _**`Nombre:`**_ Signature
- 		             _**`Valor:`**_ PayLoad
+_**`Nombre:`**_ Signature
+ _**`Valor:`**_ PayLoad
  
  No repudio:**JWE**
  
@@ -33,19 +33,15 @@ Propuesta integracion de servicios, los aspectos relevantes en transporte para c
   * Algoritmo: A256CBC-HS512(AES_256_CBC_HMAC_SHA_512 algoritmo de cifrado autenticado).
   * Encabezado Protegido: 
   
-                     _**`Nombre:`**_ Encrypted
- 		             _**`Valor:`**_ PayLoadEncrypt
+ _**`Nombre:`**_ Encrypted
+ _**`Valor:`**_ PayLoadEncrypt
 					 
   * Encabezado no protegido compartido: 
   
-                     _**`Nombre:`**_ Signature
-                     _**`Valor:`**_ PayLoad
+ _**`Nombre:`**_ Signature
+_**`Valor:`**_ PayLoad
 					 
   * basic-auth-name: Cuando se usa con HTTP BasicAuth, devuelve el nombre del encabezado HTTP de autorización, DataPower autenticó y autorizó primero todas las solicitudes de los clientes extrayendo las credenciales del Encabezado de autenticación básica HTTP entrante y verificándolas en un servidor de Protocolo ligero:
                      
-					 _**`Usuario:`**_  periferia
-                     _**`Contraseña:`**_  periferia
-
-
-
-
+_**`Usuario:`**_  periferia
+_**`Contraseña:`**_  periferia
